@@ -1,0 +1,12 @@
+class Solution:
+    def productExceptSelf(self, nums: List[int]) -> List[int]:
+        if sum(nums) == 0: return [0]*len(nums)
+        
+        res = [0]*len(nums)
+        totalP = 1
+        for i in range(len(nums)):
+            totalP *= nums[i]
+            
+        for i in range(len(res)):
+            res[i] = totalP // nums[i]
+        return res
